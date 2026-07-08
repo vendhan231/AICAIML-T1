@@ -127,7 +127,7 @@ export default function ViewPrograms({ selectedProgram, onClearSelectedProgram }
                 duration: 0.4,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="border border-border rounded-2xl bg-bg-secondary overflow-hidden hover:shadow-md hover:border-accent-primary group flex flex-col justify-between h-full transition-all"
+              className="glass-card overflow-hidden group flex flex-col justify-between h-full"
             >
               {/* Media banner */}
               <div className="h-48 relative overflow-hidden">
@@ -203,7 +203,7 @@ export default function ViewPrograms({ selectedProgram, onClearSelectedProgram }
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 16 }}
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed inset-x-4 md:inset-x-auto md:w-[650px] max-h-[85vh] bg-bg-primary border border-border rounded-2xl shadow-2xl z-50 top-[10%] bottom-[10%] mx-auto flex flex-col overflow-hidden text-left"
+              className="fixed inset-x-4 md:inset-x-auto md:w-[650px] max-h-[85vh] bg-bg-primary border border-border rounded-[18px] shadow-2xl z-50 top-[10%] bottom-[10%] mx-auto flex flex-col overflow-hidden text-left"
             >
               {/* Header */}
               <div className="p-6 border-b border-border flex items-start justify-between bg-bg-secondary">

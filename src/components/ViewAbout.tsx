@@ -203,7 +203,7 @@ export default function ViewAbout() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="p-6 border border-border rounded-xl bg-bg-secondary flex gap-4">
+              <div className="p-6 glass-card flex gap-4">
                 <Compass className="w-8 h-8 text-accent-primary shrink-0" />
                 <div>
                   <h4 className="font-semibold text-text-primary text-sm mb-1.5">
@@ -215,7 +215,7 @@ export default function ViewAbout() {
                 </div>
               </div>
 
-              <div className="p-6 border border-border rounded-xl bg-bg-secondary flex gap-4">
+              <div className="p-6 glass-card flex gap-4">
                 <Target className="w-8 h-8 text-accent-secondary shrink-0" />
                 <div>
                   <h4 className="font-semibold text-text-primary text-sm mb-1.5">
@@ -227,7 +227,7 @@ export default function ViewAbout() {
                 </div>
               </div>
 
-              <div className="p-6 border border-border rounded-xl bg-bg-secondary flex gap-4">
+              <div className="p-6 glass-card flex gap-4">
                 <Shield className="w-8 h-8 text-accent-primary shrink-0" />
                 <div>
                   <h4 className="font-semibold text-text-primary text-sm mb-1.5">
@@ -239,7 +239,7 @@ export default function ViewAbout() {
                 </div>
               </div>
 
-              <div className="p-6 border border-border rounded-xl bg-bg-secondary flex gap-4">
+              <div className="p-6 glass-card flex gap-4">
                 <UserCheck className="w-8 h-8 text-accent-secondary shrink-0" />
                 <div>
                   <h4 className="font-semibold text-text-primary text-sm mb-1.5">

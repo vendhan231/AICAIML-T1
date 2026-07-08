@@ -7,24 +7,25 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   --color-bg-primary: #FFFFFF;
-  --color-bg-secondary: #F8F0F1;
-  --color-bg-tertiary: #F8F0F1;
+  --color-bg-secondary: #F9FAFB;
+  --color-bg-tertiary: #F3F4F6;
 
-  --color-text-primary: #5C1F28;
-  --color-text-secondary: #262626;
-  --color-text-tertiary: #7C6C6E;
+  --color-text-primary: #111827;
+  --color-text-secondary: #1F2937;
+  --color-text-tertiary: #4B5563;
 
-  --color-accent-primary: #7E2E39;
-  --color-accent-primary-hover: #63232B;
-  --color-accent-primary-tint: #FAF3F4;
+  --color-accent-primary: #DC2626;
+  --color-accent-primary-hover: #991B1B;
+  --color-accent-primary-tint: #FEF2F2;
 
-  --color-accent-secondary: #A54F5A;
-  --color-accent-secondary-tint: #FCF7F8;
+  --color-accent-secondary: #4B5563;
+  --color-accent-secondary-tint: #F3F4F6;
 
-  --color-accent-warning: #A54F5A;
+  --color-accent-warning: #EF4444;
+  --color-accent-warning-tint: #FEF2F2;
 
-  --color-border: #EFD9DC;
-  --color-border-strong: #E5C2C6;
+  --color-border: #E5E7EB;
+  --color-border-strong: #D1D5DB;
 }
 
 /* Custom global styles & utility transitions */
@@ -62,7 +63,7 @@ body {
 
 /* Glow effects */
 .btn-glow:hover {
-  box-shadow: 0 0 0 6px rgba(126, 46, 57, 0.15);
+  box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.15);
 }
 
 /* Hide default cursor on desktop with hover classes if custom cursor is active */
@@ -125,5 +126,20 @@ body {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
   box-shadow: 0 1px 12px rgba(20, 22, 26, 0.04);
+}
+
+.glass-card {
+  background: rgba(243, 244, 246, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.glass-card:hover {
+  background: rgba(243, 244, 246, 0.95);
+  border-color: rgba(220, 38, 38, 0.4);
+  box-shadow: 0 15px 35px -10px rgba(220, 38, 38, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 

@@ -17,7 +17,7 @@ export default function TeamCard({ member }: TeamCardProps) {
   return (
     <motion.div
       layoutId={`team-card-${member.id}`}
-      className="group relative bg-bg-secondary rounded-2xl overflow-hidden border border-border h-[380px] flex flex-col justify-end"
+      className="group relative bg-bg-secondary rounded-[18px] overflow-hidden border border-border h-[380px] flex flex-col justify-end"
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >

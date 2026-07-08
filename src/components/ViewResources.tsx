@@ -71,7 +71,7 @@ export default function ViewResources({ selectedArticle, onClearSelectedArticle 
                 <button
                   key={art.id}
                   onClick={() => setDetailArticleId(art.id)}
-                  className="group rounded-2xl border border-border bg-bg-secondary overflow-hidden flex flex-col hover:border-accent-primary transition-all text-left focus:outline-none h-full cursor-pointer"
+                  className="group glass-card overflow-hidden flex flex-col text-left focus:outline-none h-full cursor-pointer"
                 >
                   {/* Media banner */}
                   <div className="h-48 relative overflow-hidden shrink-0 w-full">

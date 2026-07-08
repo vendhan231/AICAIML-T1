@@ -86,7 +86,7 @@ export default function ViewContact() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch text-left">
         
         {/* Left Side: Contact Form - 7 cols */}
-        <div className="lg:col-span-7 bg-bg-secondary border border-border p-8 rounded-2xl relative overflow-hidden">
+        <div className="lg:col-span-7 glass-card p-8 relative overflow-hidden">
           {/* Subtle grid backdrop */}
           <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
 
@@ -276,7 +276,7 @@ export default function ViewContact() {
         <div className="lg:col-span-5 flex flex-col gap-6 justify-between h-full">
           
           {/* Information box */}
-          <div className="border border-border bg-bg-secondary p-7 rounded-2xl flex flex-col gap-6">
+          <div className="glass-card p-7 flex flex-col gap-6">
             <h4 className="font-display font-semibold text-text-primary text-lg flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-accent-secondary" />
               Administrative Registry
@@ -318,7 +318,7 @@ export default function ViewContact() {
           </div>
 
           {/* Ethics guidelines note card */}
-          <div className="border border-border bg-bg-primary p-7 rounded-2xl flex flex-col gap-3">
+          <div className="glass-card p-7 flex flex-col gap-3">
             <h5 className="font-mono text-xs font-bold text-text-primary uppercase tracking-wider flex items-center gap-1.5">
               <Building className="w-4 h-4 text-accent-primary" />
               Accreditation Notice
