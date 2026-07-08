@@ -348,7 +348,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
             <span className="text-accent-secondary text-3xl md:text-4xl font-display font-semibold flex items-center justify-center">
               <StatCounter target={12400} suffix="+" />
             </span>
-            <span className="text-text-tertiary text-xs uppercase tracking-wider font-semibold">
+            <span className="text-text-tertiary/90 text-xs uppercase tracking-wider font-semibold">
               Practitioners Enrolled
             </span>
           </div>
@@ -357,7 +357,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
             <span className="text-accent-secondary text-3xl md:text-4xl font-display font-semibold flex items-center justify-center">
               <StatCounter target={15} suffix="+" />
             </span>
-            <span className="text-text-tertiary text-xs uppercase tracking-wider font-semibold">
+            <span className="text-white/70 text-xs uppercase tracking-wider font-semibold">
               Specialist AI Labs
             </span>
           </div>
@@ -366,7 +366,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
             <span className="text-accent-secondary text-3xl md:text-4xl font-display font-semibold flex items-center justify-center">
               <StatCounter target={48} />
             </span>
-            <span className="text-text-tertiary text-xs uppercase tracking-wider font-semibold">
+            <span className="text-white/70 text-xs uppercase tracking-wider font-semibold">
               Active Regional Chapters
             </span>
           </div>
@@ -375,7 +375,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
             <span className="text-accent-secondary text-3xl md:text-4xl font-display font-semibold flex items-center justify-center">
               <StatCounter target={98} suffix=".4%" />
             </span>
-            <span className="text-text-tertiary text-xs uppercase tracking-wider font-semibold">
+            <span className="text-white/70 text-xs uppercase tracking-wider font-semibold">
               Placement Audit Rating
             </span>
           </div>
@@ -560,7 +560,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
               Empower Your Career With Verified AI/ML Competence
             </h2>
 
-            <p className="text-sm md:text-base text-border-strong max-w-xl leading-relaxed">
+            <p className="text-sm md:text-base text-white/80 leading-relaxed max-w-xl">
               Begin your application for certification panels or connect with a local Indian corridor chapter today.
             </p>
 

@@ -96,8 +96,8 @@ export default function CustomCursor() {
           translateY: '-50%',
           width: isHovered ? 48 : 32,
           height: isHovered ? 48 : 32,
-          backgroundColor: isHovered ? 'rgba(79, 70, 229, 0.08)' : 'rgba(79, 70, 229, 0)',
-          borderColor: isHovered ? '#00C2A8' : '#4F46E5', // primary to secondary color swap
+          backgroundColor: isHovered ? 'rgba(126, 46, 57, 0.08)' : 'rgba(126, 46, 57, 0)',
+          borderColor: isHovered ? '#A54F5A' : '#7E2E39',
           transition: 'width 0.25s ease-out, height 0.25s ease-out, background-color 0.25s ease-out, border-color 0.25s ease-out',
         }}
       />

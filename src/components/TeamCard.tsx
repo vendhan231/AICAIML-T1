@@ -47,7 +47,7 @@ export default function TeamCard({ member }: TeamCardProps) {
 
         {/* Bio (Slides up on hover) */}
         <div className="h-0 group-hover:h-20 opacity-0 group-hover:opacity-100 overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] flex flex-col justify-between">
-          <p className="text-xs text-border-strong line-clamp-3 leading-relaxed">
+          <p className="text-xs text-white/80 line-clamp-3 leading-relaxed">
             {member.bio}
           </p>
           {member.linkedin && (
