@@ -89,6 +89,146 @@ export default function ViewCommunity() {
 
       </section>
 
+      {/* Membership Tiers & Access Levels */}
+      <section className="border-t border-border pt-16 text-left flex flex-col gap-8">
+        <div className="flex flex-col gap-2 max-w-xl">
+          <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-primary">
+            INDIVIDUAL & INSTITUTIONAL MEMBERSHIP
+          </span>
+          <h2 className="text-2xl font-display font-semibold text-text-primary tracking-tight">
+            AICAIML Membership Registry
+          </h2>
+          <p className="text-xs text-text-tertiary">
+            Unlock developer-level sandboxes, verified program accreditation, and active community roundtable invitations.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Tier 1: Student Membership */}
+          <div className="glass-card p-6 flex flex-col justify-between h-full relative overflow-hidden border-t-4 border-t-accent-primary">
+            <div className="absolute top-3 right-3 bg-accent-primary-tint text-accent-primary text-[10px] font-mono px-2 py-0.5 rounded-full font-bold">
+              POPULAR FOR ACADEMIA
+            </div>
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2.5 bg-accent-primary-tint text-accent-primary rounded-xl">
+                  <GraduationCap className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-display font-bold text-text-primary text-sm">Student Associate</h4>
+                  <span className="text-[10px] text-text-tertiary uppercase tracking-wider font-semibold font-mono">Academic Tier</span>
+                </div>
+              </div>
+              <div className="mb-5">
+                <span className="text-2xl font-display font-bold text-text-primary">$0</span>
+                <span className="text-[11px] text-text-tertiary"> / forever (Verified .edu)</span>
+              </div>
+              <ul className="flex flex-col gap-2.5 text-xs text-text-secondary mb-8">
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-primary shrink-0 mt-0.5" />
+                  <span>Access to Shared ML compute nodes (60h/mo)</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-primary shrink-0 mt-0.5" />
+                  <span>Interactive debug boards & forum access</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-primary shrink-0 mt-0.5" />
+                  <span>10% discount on official Core Certifications</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-primary shrink-0 mt-0.5" />
+                  <span>Invitations to student branch local meetups</span>
+                </li>
+              </ul>
+            </div>
+            <button className="w-full py-2 px-4 rounded-lg bg-accent-primary hover:bg-accent-primary-hover text-white text-xs font-semibold transition-colors cursor-pointer focus:outline-none">
+              Register Verified Student
+            </button>
+          </div>
+
+          {/* Tier 2: Professional Researcher */}
+          <div className="glass-card p-6 flex flex-col justify-between h-full relative overflow-hidden border-t-4 border-t-accent-secondary">
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2.5 bg-accent-secondary-tint text-accent-secondary rounded-xl">
+                  <Users className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-display font-bold text-text-primary text-sm">Professional Researcher</h4>
+                  <span className="text-[10px] text-text-tertiary uppercase tracking-wider font-semibold font-mono">Individual Core</span>
+                </div>
+              </div>
+              <div className="mb-5">
+                <span className="text-2xl font-display font-bold text-text-primary">$49</span>
+                <span className="text-[11px] text-text-tertiary"> / annually</span>
+              </div>
+              <ul className="flex flex-col gap-2.5 text-xs text-text-secondary mb-8">
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-secondary shrink-0 mt-0.5" />
+                  <span>Dedicated GPU accelerator node (120h/mo)</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-secondary shrink-0 mt-0.5" />
+                  <span>Bi-monthly physical roundtable invitation</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-secondary shrink-0 mt-0.5" />
+                  <span>Enterprise debug clinic consulting allocation</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-accent-secondary shrink-0 mt-0.5" />
+                  <span>Standard placement board registry & portfolio</span>
+                </li>
+              </ul>
+            </div>
+            <button className="w-full py-2 px-4 rounded-lg bg-accent-primary hover:bg-accent-primary-hover text-white text-xs font-semibold transition-colors cursor-pointer focus:outline-none">
+              Apply Professional License
+            </button>
+          </div>
+
+          {/* Tier 3: Institutional Campus */}
+          <div className="glass-card p-6 flex flex-col justify-between h-full relative overflow-hidden border-t-4 border-t-text-primary">
+            <div>
+              <div className="flex items-center gap-2.5 mb-4">
+                <div className="p-2.5 bg-bg-tertiary text-text-primary rounded-xl">
+                  <FileText className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="font-display font-bold text-text-primary text-sm">Institutional Campus</h4>
+                  <span className="text-[10px] text-text-tertiary uppercase tracking-wider font-semibold font-mono">Departmental Level</span>
+                </div>
+              </div>
+              <div className="mb-5">
+                <span className="text-2xl font-display font-bold text-text-primary">Fully Funded</span>
+                <span className="text-[11px] text-text-tertiary"> / grant supported</span>
+              </div>
+              <ul className="flex flex-col gap-2.5 text-xs text-text-secondary mb-8">
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-text-primary shrink-0 mt-0.5" />
+                  <span>Official department accreditation license</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-text-primary shrink-0 mt-0.5" />
+                  <span>AICAIML-approved curricula integration toolkit</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-text-primary shrink-0 mt-0.5" />
+                  <span>Unlimited local student associate accounts</span>
+                </li>
+                <li className="flex gap-2 items-start">
+                  <ShieldCheck className="w-3.5 h-3.5 text-text-primary shrink-0 mt-0.5" />
+                  <span>Annual hack-symposium hosting allowance</span>
+                </li>
+              </ul>
+            </div>
+            <button className="w-full py-2 px-4 rounded-lg bg-accent-primary hover:bg-accent-primary-hover text-white text-xs font-semibold transition-colors cursor-pointer focus:outline-none">
+              Propose Institutional Charter
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Chapter Accreditation Application Banner */}
       <section className="glass-card p-8 md:p-10 text-left flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col gap-2.5 max-w-xl">

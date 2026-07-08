@@ -10,9 +10,9 @@ export default function HomeHeroBlob() {
     <div className="relative w-full aspect-square max-w-[500px] mx-auto flex items-center justify-center">
       {/* Soft Background Glowing Blobs */}
       <motion.div
-        className="absolute w-[80%] h-[80%] rounded-full opacity-35 blur-[60px]"
+        className="absolute w-[80%] h-[80%] rounded-full opacity-30 blur-[60px]"
         style={{
-          background: 'radial-gradient(circle, #D85A30 0%, #F0997B 40%, #993C1D 100%)',
+          background: 'radial-gradient(circle, #DC2626 0%, #E5E7EB 50%, #991B1B 100%)',
         }}
         animate={{
           scale: [1, 1.15, 0.95, 1],
@@ -27,9 +27,9 @@ export default function HomeHeroBlob() {
       />
 
       <motion.div
-        className="absolute w-[60%] h-[60%] rounded-full opacity-25 blur-[40px]"
+        className="absolute w-[60%] h-[60%] rounded-full opacity-20 blur-[40px]"
         style={{
-          background: 'radial-gradient(circle, #F0997B 0%, #FFFFFF 60%, #D85A30 100%)',
+          background: 'radial-gradient(circle, #E5E7EB 0%, #FFFFFF 60%, #DC2626 100%)',
         }}
         animate={{
           scale: [1.1, 0.9, 1.05, 1.1],
@@ -48,7 +48,7 @@ export default function HomeHeroBlob() {
         viewBox="0 0 400 400"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="relative w-full h-full z-10 filter drop-shadow-[0_8px_24px_rgba(216,90,48,0.15)]"
+        className="relative w-full h-full z-10 filter drop-shadow-[0_8px_24px_rgba(220,38,38,0.12)]"
       >
         {/* Connection Paths */}
         <motion.path
@@ -78,92 +78,92 @@ export default function HomeHeroBlob() {
         {/* Dynamic Nodes with hover states & pulsing glows */}
         {/* Node 1 */}
         <g>
-          <circle cx="100" cy="100" r="14" fill="#FFF5F2" />
+          <circle cx="100" cy="100" r="14" fill="#FEF2FE" />
           <motion.circle
             cx="100"
             cy="100"
             r="18"
-            stroke="#D85A30"
+            stroke="#DC2626"
             strokeWidth="1.5"
             animate={{ scale: [1, 1.3, 1], opacity: [0.8, 0.2, 0.8] }}
             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           />
-          <circle cx="100" cy="100" r="6" fill="#D85A30" />
+          <circle cx="100" cy="100" r="6" fill="#DC2626" />
         </g>
 
         {/* Node 2 - Center */}
         <g>
-          <circle cx="200" cy="120" r="16" fill="#FFFBF9" />
+          <circle cx="200" cy="120" r="16" fill="#F3F4F6" />
           <motion.circle
             cx="200"
             cy="120"
             r="22"
-            stroke="#F0997B"
+            stroke="#9CA3AF"
             strokeWidth="1.5"
             animate={{ scale: [1, 1.4, 1], opacity: [0.7, 0.1, 0.7] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
           />
-          <circle cx="200" cy="120" r="8" fill="#F0997B" />
+          <circle cx="200" cy="120" r="8" fill="#9CA3AF" />
         </g>
 
         {/* Node 3 */}
         <g>
-          <circle cx="300" cy="100" r="14" fill="#FFF0EB" />
+          <circle cx="300" cy="100" r="14" fill="#FEF2FE" />
           <motion.circle
             cx="300"
             cy="100"
             r="18"
-            stroke="#993C1D"
+            stroke="#991B1B"
             strokeWidth="1.5"
             animate={{ scale: [1, 1.3, 1], opacity: [0.8, 0.2, 0.8] }}
             transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
           />
-          <circle cx="300" cy="100" r="6" fill="#993C1D" />
+          <circle cx="300" cy="100" r="6" fill="#991B1B" />
         </g>
 
         {/* Node 4 */}
         <g>
-          <circle cx="280" cy="240" r="15" fill="#FFF5F2" />
+          <circle cx="280" cy="240" r="15" fill="#FEF2FE" />
           <motion.circle
             cx="280"
             cy="240"
             r="20"
-            stroke="#D85A30"
+            stroke="#DC2626"
             strokeWidth="1.5"
             animate={{ scale: [1, 1.3, 1], opacity: [0.9, 0.1, 0.9] }}
             transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
           />
-          <circle cx="280" cy="240" r="6" fill="#D85A30" />
+          <circle cx="280" cy="240" r="6" fill="#DC2626" />
         </g>
 
         {/* Node 5 - Bottom Center */}
         <g>
-          <circle cx="200" cy="280" r="18" fill="#FFFBF9" />
+          <circle cx="200" cy="280" r="18" fill="#F3F4F6" />
           <motion.circle
             cx="200"
             cy="280"
             r="26"
-            stroke="#F0997B"
+            stroke="#9CA3AF"
             strokeWidth="1.5"
             animate={{ scale: [1, 1.35, 1], opacity: [0.6, 0.2, 0.6] }}
             transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.2 }}
           />
-          <circle cx="200" cy="280" r="8" fill="#F0997B" />
+          <circle cx="200" cy="280" r="8" fill="#9CA3AF" />
         </g>
 
         {/* Node 6 */}
         <g>
-          <circle cx="120" cy="240" r="14" fill="#FFF0EB" />
+          <circle cx="120" cy="240" r="14" fill="#FEF2FE" />
           <motion.circle
             cx="120"
             cy="240"
             r="18"
-            stroke="#993C1D"
+            stroke="#991B1B"
             strokeWidth="1.5"
             animate={{ scale: [1, 1.3, 1], opacity: [0.8, 0.2, 0.8] }}
             transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 0.8 }}
           />
-          <circle cx="120" cy="240" r="6" fill="#993C1D" />
+          <circle cx="120" cy="240" r="6" fill="#991B1B" />
         </g>
 
         {/* Orbit Ring */}
@@ -184,7 +184,7 @@ export default function HomeHeroBlob() {
           cx="200"
           cy="70"
           r="4"
-          fill="#F0997B"
+          fill="#9CA3AF"
           animate={{ rotate: 360 }}
           transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
           style={{ transformOrigin: '200px 200px' }}
@@ -193,7 +193,7 @@ export default function HomeHeroBlob() {
           cx="200"
           cy="330"
           r="3"
-          fill="#993C1D"
+          fill="#DC2626"
           animate={{ rotate: -360 }}
           transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
           style={{ transformOrigin: '200px 200px' }}
@@ -202,13 +202,13 @@ export default function HomeHeroBlob() {
         {/* Definitions */}
         <defs>
           <linearGradient id="grid-gradient-1" x1="0" y1="0" x2="400" y2="400">
-            <stop offset="0%" stopColor="#D85A30" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#F0997B" stopOpacity="0.4" />
+            <stop offset="0%" stopColor="#DC2626" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#9CA3AF" stopOpacity="0.4" />
           </linearGradient>
           <linearGradient id="grid-gradient-2" x1="200" y1="100" x2="200" y2="300">
-            <stop offset="0%" stopColor="#F0997B" stopOpacity="0.15" />
-            <stop offset="50%" stopColor="#993C1D" stopOpacity="0.2" />
-            <stop offset="100%" stopColor="#D85A30" stopOpacity="0.15" />
+            <stop offset="0%" stopColor="#9CA3AF" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="#991B1B" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#DC2626" stopOpacity="0.15" />
           </linearGradient>
         </defs>
       </svg>

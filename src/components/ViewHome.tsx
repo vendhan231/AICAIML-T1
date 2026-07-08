@@ -9,7 +9,7 @@ import { ActivePage, Program, EventItem } from '../types';
 import { programsData, eventsData, testimonialsData } from '../data';
 import HomeHeroBlob from './HomeHeroBlob';
 import StatCounter from './StatCounter';
-import { ArrowRight, Star, Calendar, Users, GraduationCap, ChevronLeft, ChevronRight, Play, BookOpen, Quote, Shield } from 'lucide-react';
+import { ArrowRight, Star, Calendar, Users, GraduationCap, ChevronLeft, ChevronRight, Play, BookOpen, Quote, Shield, ShieldCheck, FileText } from 'lucide-react';
 
 interface ViewHomeProps {
   onNavigate: (page: ActivePage) => void;
@@ -378,6 +378,183 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
             <span className="text-text-tertiary text-xs uppercase tracking-wider font-semibold">
               Placement Audit Rating
             </span>
+          </div>
+
+        </div>
+      </section>
+
+      {/* HIGHLIGHTED MEMBERSHIP PLANS SECTION */}
+      <section className="py-24 bg-bg-secondary border-b border-border">
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex flex-col gap-12">
+          
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+            <div className="flex flex-col gap-3 text-left max-w-2xl">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-primary">
+                AICAIML MEMBER TRACKS
+              </span>
+              <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight text-text-primary">
+                Choose Your Membership Track
+              </h2>
+              <p className="text-sm text-text-tertiary">
+                Connect with verified academic, individual, and research-grade computing licenses tailored for developers and institutions.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('community')}
+              className="px-5 py-2.5 text-xs font-semibold border border-border bg-bg-primary hover:border-accent-primary hover:text-accent-primary rounded-full flex items-center gap-1.5 transition-all group cursor-pointer focus:outline-none"
+            >
+              Go to Community Registry
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Tier 1: Student Membership */}
+            <motion.div 
+              whileHover={{ y: -6 }}
+              className="glass-card p-8 flex flex-col justify-between h-full relative overflow-hidden border-t-4 border-t-accent-primary text-left bg-bg-primary"
+            >
+              <div className="absolute top-3 right-3 bg-accent-primary-tint text-accent-primary text-[10px] font-mono px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
+                Academia
+              </div>
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-accent-primary-tint text-accent-primary rounded-xl">
+                    <GraduationCap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-display font-bold text-text-primary text-base">Student Associate</h4>
+                    <span className="text-[10px] text-text-tertiary uppercase tracking-wider font-semibold font-mono">Verified .edu</span>
+                  </div>
+                </div>
+                <div className="mb-6">
+                  <span className="text-3xl font-display font-bold text-text-primary">$0</span>
+                  <span className="text-xs text-text-tertiary"> / forever (Free)</span>
+                </div>
+                <ul className="flex flex-col gap-3.5 text-xs text-text-secondary mb-8">
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>Access to Shared ML compute nodes (60h/mo)</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>Interactive debug boards & forum access</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>10% discount on official Core Certifications</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>Invitations to student branch local meetups</span>
+                  </li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => onNavigate('community')}
+                className="w-full py-3 px-4 rounded-xl bg-accent-primary hover:bg-accent-primary-hover text-white text-xs font-semibold transition-all cursor-pointer focus:outline-none text-center active:scale-[0.98]"
+              >
+                Register Verified Student
+              </button>
+            </motion.div>
+
+            {/* Tier 2: Professional Researcher */}
+            <motion.div 
+              whileHover={{ y: -6 }}
+              className="glass-card p-8 flex flex-col justify-between h-full relative overflow-hidden border-t-4 border-t-accent-primary text-left bg-bg-primary shadow-md ring-2 ring-accent-primary/20"
+            >
+              <div className="absolute top-3 right-3 bg-accent-primary text-white text-[10px] font-mono px-2.5 py-1 rounded-full font-bold uppercase tracking-wider">
+                Most Popular
+              </div>
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-accent-primary-tint text-accent-primary rounded-xl">
+                    <Users className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-display font-bold text-text-primary text-base">Professional Researcher</h4>
+                    <span className="text-[10px] text-accent-primary uppercase tracking-wider font-bold font-mono">Individual Core</span>
+                  </div>
+                </div>
+                <div className="mb-6">
+                  <span className="text-3xl font-display font-bold text-text-primary">$49</span>
+                  <span className="text-xs text-text-tertiary"> / annually</span>
+                </div>
+                <ul className="flex flex-col gap-3.5 text-xs text-text-secondary mb-8">
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>Dedicated GPU accelerator node (120h/mo)</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>Bi-monthly physical roundtable invitation</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>Enterprise debug clinic consulting allocation</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-accent-primary shrink-0 mt-0.5" />
+                    <span>Standard placement board registry & portfolio</span>
+                  </li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => onNavigate('community')}
+                className="w-full py-3 px-4 rounded-xl bg-accent-primary hover:bg-accent-primary-hover text-white text-xs font-semibold transition-all cursor-pointer focus:outline-none text-center active:scale-[0.98] shadow-sm"
+              >
+                Apply Professional License
+              </button>
+            </motion.div>
+
+            {/* Tier 3: Institutional Campus */}
+            <motion.div 
+              whileHover={{ y: -6 }}
+              className="glass-card p-8 flex flex-col justify-between h-full relative overflow-hidden border-t-4 border-t-accent-secondary text-left bg-bg-primary"
+            >
+              <div className="absolute top-3 right-3 bg-accent-secondary-tint text-text-secondary text-[10px] font-mono px-2.5 py-1 rounded-full font-bold uppercase tracking-wider border border-border">
+                Departmental
+              </div>
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-bg-tertiary text-text-primary rounded-xl">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-display font-bold text-text-primary text-base">Institutional Campus</h4>
+                    <span className="text-[10px] text-text-tertiary uppercase tracking-wider font-semibold font-mono">Grant Supported</span>
+                  </div>
+                </div>
+                <div className="mb-6">
+                  <span className="text-3xl font-display font-bold text-text-primary">Fully Funded</span>
+                  <span className="text-xs text-text-tertiary"> / grant authorized</span>
+                </div>
+                <ul className="flex flex-col gap-3.5 text-xs text-text-secondary mb-8">
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-text-primary shrink-0 mt-0.5" />
+                    <span>Official department accreditation license</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-text-primary shrink-0 mt-0.5" />
+                    <span>AICAIML-approved curricula integration toolkit</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-text-primary shrink-0 mt-0.5" />
+                    <span>Unlimited local student associate accounts</span>
+                  </li>
+                  <li className="flex gap-2.5 items-start">
+                    <ShieldCheck className="w-4 h-4 text-text-primary shrink-0 mt-0.5" />
+                    <span>Annual hack-symposium hosting allowance</span>
+                  </li>
+                </ul>
+              </div>
+              <button 
+                onClick={() => onNavigate('community')}
+                className="w-full py-3 px-4 rounded-xl bg-accent-primary hover:bg-accent-primary-hover text-white text-xs font-semibold transition-all cursor-pointer focus:outline-none text-center active:scale-[0.98]"
+              >
+                Propose Institutional Charter
+              </button>
+            </motion.div>
           </div>
 
         </div>

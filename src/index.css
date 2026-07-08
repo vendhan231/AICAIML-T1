@@ -6,26 +6,26 @@
   --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-bg-primary: #FAECE7;
-  --color-bg-secondary: #FFFFFF;
-  --color-bg-tertiary: #F5DFD7;
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F9FAFB;
+  --color-bg-tertiary: #F3F4F6;
 
-  --color-text-primary: #2C2C2A;
-  --color-text-secondary: #2C2C2A;
-  --color-text-tertiary: #5F5E5A;
+  --color-text-primary: #111827;
+  --color-text-secondary: #1F2937;
+  --color-text-tertiary: #4B5563;
 
-  --color-accent-primary: #D85A30;
-  --color-accent-primary-hover: #993C1D;
-  --color-accent-primary-tint: #FFF5F2;
+  --color-accent-primary: #DC2626;
+  --color-accent-primary-hover: #991B1B;
+  --color-accent-primary-tint: #FEF2F2;
 
-  --color-accent-secondary: #F0997B;
-  --color-accent-secondary-tint: #FFFBF9;
+  --color-accent-secondary: #4B5563;
+  --color-accent-secondary-tint: #F3F4F6;
 
-  --color-accent-warning: #993C1D;
-  --color-accent-warning-tint: #FFF0EB;
+  --color-accent-warning: #EF4444;
+  --color-accent-warning-tint: #FEF2F2;
 
-  --color-border: #F0997B;
-  --color-border-strong: #D85A30;
+  --color-border: #E5E7EB;
+  --color-border-strong: #D1D5DB;
 }
 
 /* Custom global styles & utility transitions */
@@ -63,7 +63,7 @@ body {
 
 /* Glow effects */
 .btn-glow:hover {
-  box-shadow: 0 0 0 6px rgba(216, 90, 48, 0.15);
+  box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.15);
 }
 
 /* Hide default cursor on desktop with hover classes if custom cursor is active */
@@ -129,17 +129,17 @@ body {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(243, 244, 246, 0.8);
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(240, 153, 123, 0.6);
+  border: 1px solid rgba(229, 231, 235, 0.8);
   border-radius: 18px;
-  box-shadow: 0 10px 30px -10px rgba(216, 90, 48, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
   transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .glass-card:hover {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(216, 90, 48, 0.4);
-  box-shadow: 0 15px 35px -10px rgba(216, 90, 48, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
+  background: rgba(243, 244, 246, 0.95);
+  border-color: rgba(220, 38, 38, 0.4);
+  box-shadow: 0 15px 35px -10px rgba(220, 38, 38, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
