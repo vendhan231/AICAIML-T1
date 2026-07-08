@@ -176,7 +176,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
             
             {/* Card 1: Programs */}
             <motion.div
-              className="p-8 border border-border rounded-2xl bg-bg-secondary flex flex-col justify-between min-h-[280px] group hover:border-accent-primary transition-all duration-300"
+              className="p-8 glass-card flex flex-col justify-between min-h-[280px] group"
               whileHover={{ y: -4 }}
             >
               <div className="flex flex-col gap-4">
@@ -203,7 +203,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
 
             {/* Card 2: Labs */}
             <motion.div
-              className="p-8 border border-border rounded-2xl bg-bg-secondary flex flex-col justify-between min-h-[280px] group hover:border-accent-secondary transition-all duration-300"
+              className="p-8 glass-card flex flex-col justify-between min-h-[280px] group"
               whileHover={{ y: -4 }}
             >
               <div className="flex flex-col gap-4">
@@ -230,7 +230,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
 
             {/* Card 3: Community */}
             <motion.div
-              className="p-8 border border-border rounded-2xl bg-bg-secondary flex flex-col justify-between min-h-[280px] group hover:border-accent-primary transition-all duration-300"
+              className="p-8 glass-card flex flex-col justify-between min-h-[280px] group"
               whileHover={{ y: -4 }}
             >
               <div className="flex flex-col gap-4">

@@ -93,7 +93,7 @@ export default function ViewEvents() {
                   duration: 0.4,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="perspective-card group relative border border-border rounded-2xl bg-bg-secondary overflow-hidden hover:border-accent-primary transition-colors flex flex-col justify-between h-full"
+                className="perspective-card group relative glass-card overflow-hidden flex flex-col justify-between h-full"
               >
                 {/* Subtle rotateY 4deg max tilt hover effect on inner container */}
                 <div className="relative flex-1 flex flex-col justify-between transition-all duration-300 ease-out group-hover:[transform:rotateY(3deg)_rotateX(0.5deg)]">

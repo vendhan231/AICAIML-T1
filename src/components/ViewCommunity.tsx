@@ -46,14 +46,14 @@ export default function ViewCommunity() {
             <p>
               We accredit student branch circles at premier computer science institutes. Registered branches gain access to our custom board-approved Applied Machine Learning curricula, hardware compute pools, and annual hack-symposium allocations.
             </p>
-            <div className="flex flex-col gap-2.5 mt-2 bg-bg-secondary p-4 rounded-xl border border-border">
+            <div className="flex flex-col gap-2.5 mt-2 glass-card p-5">
               <div className="flex gap-2 items-center text-text-primary font-medium">
                 <ShieldCheck className="w-4 h-4 text-accent-secondary" />
-                <span>Requires minimum 15 active postgrad/undergrad enrollments</span>
+                <span>Requires minimum 15 active enrollments</span>
               </div>
               <div className="flex gap-2 items-center text-text-primary font-medium">
                 <ShieldCheck className="w-4 h-4 text-accent-secondary" />
-                <span>Sponsored by an active CS/Math department faculty peer</span>
+                <span>Sponsored by an active CS/Math faculty peer</span>
               </div>
             </div>
           </div>
@@ -74,14 +74,14 @@ export default function ViewCommunity() {
             <p>
               Professional chapters unite researchers, industry CAIOs, and core ML engineers in metropolitan corridors. These branches serve as regional hubs for peer-led debug roundtables, enterprise security panels, and placement standard boards.
             </p>
-            <div className="flex flex-col gap-2.5 mt-2 bg-bg-secondary p-4 rounded-xl border border-border">
+            <div className="flex flex-col gap-2.5 mt-2 glass-card p-5">
               <div className="flex gap-2 items-center text-text-primary font-medium">
                 <ShieldCheck className="w-4 h-4 text-accent-primary" />
-                <span>Organizes bi-monthly physical roundtables & debug board clinics</span>
+                <span>Organizes bi-monthly physical roundtables & clinics</span>
               </div>
               <div className="flex gap-2 items-center text-text-primary font-medium">
                 <ShieldCheck className="w-4 h-4 text-accent-primary" />
-                <span>Governs placement auditing for localized institutional graduates</span>
+                <span>Governs placement auditing for localized graduates</span>
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function ViewCommunity() {
       </section>
 
       {/* Chapter Accreditation Application Banner */}
-      <section className="bg-bg-secondary border border-border rounded-2xl p-6 md:p-10 text-left flex flex-col md:flex-row items-center justify-between gap-6">
+      <section className="glass-card p-8 md:p-10 text-left flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="flex flex-col gap-2.5 max-w-xl">
           <h4 className="text-lg font-display font-bold text-text-primary">
             Ready to accredit your campus?
