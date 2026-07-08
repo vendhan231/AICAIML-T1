@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F0F1;
+  --color-bg-tertiary: #F8F0F1;
+
+  --color-text-primary: #5C1F28;
+  --color-text-secondary: #262626;
+  --color-text-tertiary: #7C6C6E;
+
+  --color-accent-primary: #7E2E39;
+  --color-accent-primary-hover: #63232B;
+  --color-accent-primary-tint: #FAF3F4;
+
+  --color-accent-secondary: #A54F5A;
+  --color-accent-secondary-tint: #FCF7F8;
+
+  --color-accent-warning: #A54F5A;
+
+  --color-border: #EFD9DC;
+  --color-border-strong: #E5C2C6;
+}
+
+/* Custom global styles & utility transitions */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* Dot grid background pattern */
+.dot-grid {
+  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Glow effects */
+.btn-glow:hover {
+  box-shadow: 0 0 0 6px rgba(126, 46, 57, 0.15);
+}
+
+/* Hide default cursor on desktop with hover classes if custom cursor is active */
+@media (min-width: 1024px) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Marquee infinite scroll animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse animation for active learning dot */
+@keyframes accent-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+.animate-accent-pulse {
+  animation: accent-pulse 2s ease-in-out infinite;
+}
+
+/* Custom clip path image reveal effect */
+@keyframes clip-reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.image-reveal {
+  animation: clip-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Glassmorphism details */
+.glass-header {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 1px 12px rgba(20, 22, 26, 0.04);
+}
+
