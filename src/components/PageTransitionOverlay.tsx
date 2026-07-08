@@ -14,89 +14,83 @@ interface PageTransitionOverlayProps {
 export default function PageTransitionOverlay({ stage, direction }: PageTransitionOverlayProps) {
   if (stage === 'idle') return null;
 
-  // Compute transform origins and initial/animate scales based on spatial directions
-  let origin = 'left';
-  let initialScaleX = 0;
-  let initialScaleY = 1;
-  let animateScaleX = 1;
-  let animateScaleY = 1;
-  let exitScaleX = 0;
-  let exitScaleY = 1;
-  let exitOrigin = 'right';
-
-  if (direction === 'left-to-right') {
-    origin = 'left';
-    initialScaleX = 0;
-    initialScaleY = 1;
-    animateScaleX = 1;
-    animateScaleY = 1;
-    exitScaleX = 0;
-    exitScaleY = 1;
-    exitOrigin = 'right';
-  } else if (direction === 'right-to-left') {
-    origin = 'right';
-    initialScaleX = 0;
-    initialScaleY = 1;
-    animateScaleX = 1;
-    animateScaleY = 1;
-    exitScaleX = 0;
-    exitScaleY = 1;
-    exitOrigin = 'left';
-  } else if (direction === 'bottom-to-top') {
-    origin = 'bottom';
-    initialScaleX = 1;
-    initialScaleY = 0;
-    animateScaleX = 1;
-    animateScaleY = 1;
-    exitScaleX = 1;
-    exitScaleY = 0;
-    exitOrigin = 'top';
-  } else if (direction === 'top-to-bottom') {
-    origin = 'top';
-    initialScaleX = 1;
-    initialScaleY = 0;
-    animateScaleX = 1;
-    animateScaleY = 1;
-    exitScaleX = 1;
-    exitScaleY = 0;
-    exitOrigin = 'bottom';
-  }
-
   const isCovering = stage === 'covering';
+
+  const getTopClip = (progress: number, isExit: boolean) => {
+    if (isExit) progress = 1 - progress;
+    switch (direction) {
+      case 'left-to-right':
+        return `polygon(0 0, ${progress * 100}% 0, ${progress * 100}% 50%, 0 50%)`;
+      case 'right-to-left':
+        return `polygon(${100 - progress * 100}% 0, 100% 0, 100% 50%, ${100 - progress * 100}% 50%)`;
+      case 'bottom-to-top':
+        return `polygon(0 0, 100% 0, 100% ${progress * 50}%, 0 ${progress * 50}%)`;
+      case 'top-to-bottom':
+        return `polygon(0 ${100 - progress * 50}%, 100% ${100 - progress * 50}%, 100% 100%, 0 100%)`;
+      default:
+        return `polygon(0 0, ${progress * 100}% 0, ${progress * 100}% 50%, 0 50%)`;
+    }
+  };
+
+  const getBottomClip = (progress: number, isExit: boolean) => {
+    if (isExit) progress = 1 - progress;
+    switch (direction) {
+      case 'left-to-right':
+        return `polygon(0 50%, ${progress * 100}% 50%, ${progress * 100}% 100%, 0 100%)`;
+      case 'right-to-left':
+        return `polygon(${100 - progress * 100}% 50%, 100% 50%, 100% 100%, ${100 - progress * 100}% 100%)`;
+      case 'bottom-to-top':
+        return `polygon(0 ${progress * 50}%, 100% ${progress * 50}%, 100% 100%, 0 100%)`;
+      case 'top-to-bottom':
+        return `polygon(0 0, 100% 0, 100% ${100 - progress * 50}%, 0 ${100 - progress * 50}%)`;
+      default:
+        return `polygon(0 50%, ${progress * 100}% 50%, ${progress * 100}% 100%, 0 100%)`;
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 pointer-events-none">
-      {/* 2px teal progress reassurance line running along the very top of the viewport */}
+      {/* Thin progress accent bar */}
       {isCovering && (
         <motion.div
-          className="fixed top-0 left-0 right-0 h-[2px] bg-accent-secondary z-50 origin-left"
+          className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-accent-primary to-accent-secondary z-50"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.45, ease: 'easeInOut' }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
         />
       )}
 
-      {/* Main Solid Curtain Panel */}
+      {/* Top half wipe */}
       <motion.div
-        className="w-full h-full bg-accent-primary"
-        style={{
-          transformOrigin: isCovering ? origin : exitOrigin,
-          scaleX: direction.includes('horizontal') || direction.includes('left') || direction.includes('right') ? undefined : 1,
-          scaleY: direction.includes('vertical') || direction.includes('top') || direction.includes('bottom') ? undefined : 1,
-        }}
-        initial={{
-          scaleX: direction.includes('left') || direction.includes('right') ? initialScaleX : 1,
-          scaleY: direction.includes('top') || direction.includes('bottom') ? initialScaleY : 1,
-        }}
-        animate={{
-          scaleX: direction.includes('left') || direction.includes('right') ? (isCovering ? 1 : 0) : 1,
-          scaleY: direction.includes('top') || direction.includes('bottom') ? (isCovering ? 1 : 0) : 1,
-        }}
+        className="absolute inset-x-0 top-0 h-1/2 bg-white origin-top"
+        initial={{ clipPath: getTopClip(0, false) }}
+        animate={{ clipPath: getTopClip(1, !isCovering) }}
         transition={{
-          duration: 0.45,
-          ease: [0.22, 1, 0.36, 1], // premium smooth-out curve
+          duration: 0.6,
+          ease: [0.22, 1, 0.36, 1],
         }}
       />
+
+      {/* Bottom half wipe */}
+      <motion.div
+        className="absolute inset-x-0 bottom-0 h-1/2 bg-white origin-bottom"
+        initial={{ clipPath: getBottomClip(0, false) }}
+        animate={{ clipPath: getBottomClip(1, !isCovering) }}
+        transition={{
+          duration: 0.6,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      />
+
+      {/* Accent edge glow */}
+      {isCovering && (
+        <motion.div
+          className="absolute inset-x-0 top-1/2 h-[2px] bg-accent-primary/60 blur-sm z-50"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        />
+      )}
     </div>
   );
 }

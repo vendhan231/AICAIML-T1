@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ActivePage, Program, EventItem } from '../types';
 import { programsData, eventsData, testimonialsData } from '../data';
-import HomeHeroBlob from './HomeHeroBlob';
 import StatCounter from './StatCounter';
 import { ArrowRight, Star, Calendar, Users, GraduationCap, ChevronLeft, ChevronRight, Play, BookOpen, Quote, Shield, ShieldCheck, FileText } from 'lucide-react';
 
@@ -44,14 +43,15 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
     <div className="flex flex-col w-full">
       {/* 1. HERO SECTION - full view on dot grid */}
       <section className="relative min-h-[calc(100vh-80px)] flex items-center py-16 overflow-hidden">
-        <div className="absolute inset-0 dot-grid opacity-[0.35] pointer-events-none" />
-        
-        {/* Abstract glowing decor */}
-        <div className="absolute top-[20%] left-[-10%] w-[30%] h-[30%] bg-accent-primary-tint rounded-full blur-[100px] opacity-60 pointer-events-none" />
-
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
-          {/* Left Text Block - 7 cols */}
-          <div className="lg:col-span-7 flex flex-col gap-6 text-left">
+        <motion.img
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80"
+          alt="AI and Machine Learning visualization"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 w-[60%] h-[70%] object-cover rounded-l-3xl shadow-2xl opacity-90 pointer-events-none hidden lg:block"
+        />
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-8 text-left relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -104,17 +104,6 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
                 Meet Leadership
               </button>
             </motion.div>
-          </div>
-
-          {/* Right SVG Blob System - 5 cols */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5 flex justify-center"
-          >
-            <HomeHeroBlob />
-          </motion.div>
         </div>
       </section>
 
@@ -149,199 +138,14 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
                   {partner.name}
                 </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                   </div>
+               </div>
 
-      {/* 3. WHAT WE DO - bento grid */}
-      <section className="py-24 bg-bg-primary">
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex flex-col gap-12">
-          
-          {/* Header block */}
-          <div className="flex flex-col gap-3 text-left max-w-xl">
-            <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-primary">
-              CORE INITIATIVES
-            </span>
-            <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight text-text-primary">
-              Scientific Orchestration For A New Era
-            </h2>
-            <p className="text-sm text-text-secondary leading-relaxed">
-              We establish high-fidelity learning models, state-of-the-art laboratory sandboxes, and highly interactive regional chapters designed for absolute credibility.
-            </p>
-          </div>
-
-          {/* Bento Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Card 1: Programs */}
-            <motion.div
-              className="p-8 glass-card flex flex-col justify-between min-h-[280px] group"
-              whileHover={{ y: -4 }}
-            >
-              <div className="flex flex-col gap-4">
-                <div className="p-3 bg-accent-primary-tint text-accent-primary rounded-xl self-start">
-                  <GraduationCap className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-text-primary mb-1.5 group-hover:text-accent-primary transition-colors">
-                    Rigorous Curriculums
-                  </h3>
-                  <p className="text-xs text-text-secondary leading-relaxed">
-                    Accredited pathways in Applied Mathematics, Generative AI Systems, LLMOps, and Edge Optimization, peer-reviewed by our specialist board.
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => onNavigate('programs')}
-                className="text-xs font-semibold text-accent-primary flex items-center gap-1 group/btn self-start mt-4 focus:outline-none cursor-pointer"
-              >
-                Explore Curriculums
-                <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1.5 transition-transform" />
-              </button>
-            </motion.div>
-
-            {/* Card 2: Labs */}
-            <motion.div
-              className="p-8 glass-card flex flex-col justify-between min-h-[280px] group"
-              whileHover={{ y: -4 }}
-            >
-              <div className="flex flex-col gap-4">
-                <div className="p-3 bg-accent-secondary-tint text-accent-secondary rounded-xl self-start">
-                  <BookOpen className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-text-primary mb-1.5 group-hover:text-accent-secondary transition-colors">
-                    AI-ML Research Labs
-                  </h3>
-                  <p className="text-xs text-text-secondary leading-relaxed">
-                    Dedicated sandboxes exploring model compression, knowledge distillation, and neural search with raw, peer-accessible compute logs.
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => onNavigate('programs')}
-                className="text-xs font-semibold text-accent-secondary flex items-center gap-1 group/btn self-start mt-4 focus:outline-none cursor-pointer"
-              >
-                Access Labs
-                <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1.5 transition-transform" />
-              </button>
-            </motion.div>
-
-            {/* Card 3: Community */}
-            <motion.div
-              className="p-8 glass-card flex flex-col justify-between min-h-[280px] group"
-              whileHover={{ y: -4 }}
-            >
-              <div className="flex flex-col gap-4">
-                <div className="p-3 bg-accent-primary-tint text-accent-primary rounded-xl self-start">
-                  <Users className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-display font-semibold text-text-primary mb-1.5 group-hover:text-accent-primary transition-colors">
-                    Local Chapter Circles
-                  </h3>
-                  <p className="text-xs text-text-secondary leading-relaxed">
-                    Interactive networks across key Indian tech corridors, supporting direct regional meetups, hack-events, and physical debug boards.
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => onNavigate('community')}
-                className="text-xs font-semibold text-accent-primary flex items-center gap-1 group/btn self-start mt-4 focus:outline-none cursor-pointer"
-              >
-                Connect to Chapters
-                <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1.5 transition-transform" />
-              </button>
-            </motion.div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 4. FEATURED CURRICULUMS / COURSES */}
-      <section className="py-24 bg-bg-secondary border-y border-border">
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-8 flex flex-col gap-12">
-          
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
-            <div className="flex flex-col gap-3 text-left">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-accent-primary">
-                REPRESENTATIVE OFFERINGS
-              </span>
-              <h2 className="text-3xl md:text-4xl font-display font-semibold tracking-tight text-text-primary">
-                Syllabi For Modern Practitioners
-              </h2>
-            </div>
-            <button
-              onClick={() => onNavigate('programs')}
-              className="px-5 py-2.5 text-xs font-semibold border border-border bg-bg-primary hover:border-accent-primary hover:text-accent-primary rounded-full flex items-center gap-1.5 transition-all group cursor-pointer focus:outline-none"
-            >
-              View Full Programs Catalog
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {programsData.slice(0, 2).map((prog) => (
-              <div
-                key={prog.id}
-                className="border border-border rounded-2xl bg-bg-primary overflow-hidden flex flex-col sm:flex-row shadow-sm hover:shadow-md transition-shadow group h-full"
-              >
-                {/* Left Thumbnail with Clip Image Reveal on scroll */}
-                <div className="w-full sm:w-[40%] h-[200px] sm:h-auto relative overflow-hidden shrink-0">
-                  <img
-                    src={prog.image}
-                    alt={prog.title}
-                    referrerPolicy="no-referrer"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                  />
-                  {/* Category Pill Tag */}
-                  <span className="absolute top-4 left-4 text-[9px] font-mono font-bold uppercase tracking-wider text-accent-secondary bg-accent-secondary-tint/90 backdrop-blur px-2.5 py-1 rounded-full border border-accent-secondary/10">
-                    {prog.category}
-                  </span>
-                </div>
-
-                {/* Right Body */}
-                <div className="p-6 flex flex-col justify-between gap-4 flex-1 text-left">
-                  <div>
-                    <span className="text-[10px] font-mono font-medium tracking-wide text-text-tertiary block mb-1">
-                      {prog.duration} • {prog.lessons} LECTURES
-                    </span>
-                    <h3 className="text-lg font-display font-bold text-text-primary mb-2 group-hover:text-accent-primary transition-colors">
-                      {prog.title}
-                    </h3>
-                    <p className="text-xs text-text-secondary leading-relaxed line-clamp-3">
-                      {prog.description}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between border-t border-border pt-4">
-                    <span className="text-[11px] font-medium text-text-tertiary">
-                      Board: <strong className="text-text-primary font-semibold">{prog.instructor}</strong>
-                    </span>
-                    <button
-                      onClick={() => {
-                        onSelectProgram(prog);
-                        onNavigate('programs');
-                      }}
-                      className="text-xs font-semibold text-accent-primary hover:text-accent-primary-hover flex items-center gap-1 cursor-pointer focus:outline-none"
-                    >
-                      Syllabus Details
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
+         </div>
+       </section>
 
       {/* 5. STATS STRIP - dark panel, only dark section */}
       <section className="bg-text-primary text-white py-16 relative overflow-hidden">
-        <div className="absolute inset-0 dot-grid opacity-[0.06] pointer-events-none" />
-        
         <div className="w-full max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 items-center">
           
           <div className="flex flex-col gap-1 text-center">
@@ -600,19 +404,7 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
                   )}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-5 items-start">
-                  {/* Event Thumbnail */}
-                  <div className="w-full sm:w-[150px] aspect-video sm:aspect-square rounded-xl overflow-hidden shrink-0 border border-border relative">
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      referrerPolicy="no-referrer"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-
-                  {/* Info details */}
-                  <div className="flex flex-col gap-1.5 flex-1">
+                <div className="flex flex-col gap-1.5 flex-1">
                     <div className="flex flex-wrap items-center gap-2">
                       <span className="text-[10px] font-mono font-bold uppercase text-accent-primary bg-accent-primary-tint px-2.5 py-0.5 rounded-full">
                         {event.category}
@@ -634,19 +426,16 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
                       <Users className="w-3.5 h-3.5 text-accent-secondary" />
                       <span>Led by: <strong className="text-text-primary font-semibold">{event.speaker}</strong> ({event.speakerTitle})</span>
                     </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                   </div>
+                 </div>
+             ))}
+           </div>
 
         </div>
       </section>
 
       {/* 7. TESTIMONIALS CAROUSEL */}
       <section className="py-24 bg-bg-secondary border-t border-border relative overflow-hidden">
-        <div className="absolute top-[10%] right-[-5%] w-[25%] h-[25%] bg-accent-secondary-tint rounded-full blur-[100px] opacity-40 pointer-events-none" />
-
         <div className="w-full max-w-4xl mx-auto px-6 md:px-8 text-center flex flex-col items-center gap-8 relative z-10">
           <Quote className="w-10 h-10 text-accent-primary/20" />
 
@@ -666,12 +455,6 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
                 </p>
 
                 <div className="flex items-center justify-center gap-3">
-                  <img
-                    src={testimonialsData[activeTestimonialIdx].image}
-                    alt={testimonialsData[activeTestimonialIdx].author}
-                    referrerPolicy="no-referrer"
-                    className="w-11 h-11 rounded-full object-cover border border-border"
-                  />
                   <div className="text-left">
                     <h5 className="font-bold text-text-primary text-sm leading-tight">
                       {testimonialsData[activeTestimonialIdx].author}
@@ -726,8 +509,6 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
       <section className="py-20 bg-bg-primary">
         <div className="w-full max-w-7xl mx-auto px-6 md:px-8">
           <div className="relative rounded-3xl overflow-hidden p-8 md:p-14 text-center text-white bg-gradient-to-br from-accent-primary via-accent-primary to-accent-secondary flex flex-col items-center gap-6 justify-center shadow-xl">
-            {/* Ambient vector lines backdrop */}
-            <div className="absolute inset-0 dot-grid opacity-[0.12] pointer-events-none" />
 
             <span className="px-3 py-1 rounded-full bg-white/10 text-white font-mono text-xs uppercase tracking-wider border border-white/10">
               JOIN THE MODERN ADVANCEMENT
@@ -747,10 +528,10 @@ export default function ViewHome({ onNavigate, onSelectProgram }: ViewHomeProps)
             >
               Get Started Now
               <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </section>
+             </button>
+                    </div>
+                </div>
+        </section>
     </div>
   );
 }
